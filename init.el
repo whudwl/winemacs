@@ -29,3 +29,18 @@
 (setq straight-use-package-by-default t)
 (setq straight-check-for-modifications '(check-on-save
                                          find-when-checking))
+
+(use-package vertico
+  ;; Special recipe to load extensions conveniently
+  :straight (vertico :files (:defaults "extensions/*"))
+  :hook (after-init . vertico-mode))
+
+(use-package vertico-directory
+  :after vertico
+  :straight nil
+  ;; More convenient directory navigation commands
+  :bind (:map vertico-map
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word))
+  ;; Tidy shadowed file names
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
