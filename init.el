@@ -44,3 +44,8 @@
               ("M-DEL" . vertico-directory-delete-word))
   ;; Tidy shadowed file names
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
+
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(display-time-mode 1)
+
