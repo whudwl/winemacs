@@ -55,4 +55,5 @@
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package emacs
-  :bind (("C-2" . set-mark-command)))
+  :bind (("C-2" . set-mark-command)
+	 ("M-t" . mode-line-other-buffer)))
