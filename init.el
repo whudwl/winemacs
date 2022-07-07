@@ -56,4 +56,8 @@
 
 (use-package emacs
   :bind (("C-2" . set-mark-command)
-	 ("M-t" . mode-line-other-buffer)))
+	 ("M-t" . mode-line-other-buffer))
+  :custom
+  (inhibit-startup-screen t)
+  :init
+  (fset 'yes-or-no-p 'y-or-n-p))
