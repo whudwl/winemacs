@@ -61,3 +61,10 @@
   (inhibit-startup-screen t)
   :init
   (fset 'yes-or-no-p 'y-or-n-p))
+
+(use-package recentf
+  :hook (after-init . recentf-mode))
+
+(defun use/magit()
+  (interactive)
+  (use-package magit))
